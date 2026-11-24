@@ -1,0 +1,11 @@
+langgraph>=1.0
+langchain-core>=1.0
+langchain-groq
+# langchain-openai   # if LLM_PROVIDER=openai
+# langchain-ollama   # if LLM_PROVIDER=ollama
+ddgs
+httpx
+beautifulsoup4
+python-dotenv
+streamlit
+pytest
