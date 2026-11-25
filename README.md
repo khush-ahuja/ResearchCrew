@@ -41,7 +41,7 @@ flowchart LR
 ```bash
 git clone https://github.com/khush-ahuja/ResearchCrew && cd ResearchCrew
 pip install -r requirements.txt
-cp .env.example .env          # add a free Groq key, or set LLM_PROVIDER=ollama to run locally
+cp .env.example .env          # add your Groq key, or set LLM_PROVIDER=ollama to run locally
 
 python cli.py "How do vector databases differ from traditional databases?"
 python cli.py "What is LoRA fine-tuning and when should I use it?" --out lora.md
