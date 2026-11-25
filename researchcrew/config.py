@@ -14,5 +14,5 @@ except ImportError:
 class Settings:
     # "groq" (free tier), "openai", or "ollama" (fully local)
     llm_provider: str = field(default_factory=lambda: os.getenv("LLM_PROVIDER", "groq"))
-    llm_model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "llama-3.1-8b-instant"))
+    llm_model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "openai/gpt-oss-20b"))
     temperature: float = field(default_factory=lambda: float(os.getenv("LLM_TEMPERATURE", "0")))
