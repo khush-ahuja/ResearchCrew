@@ -72,6 +72,24 @@ The report contains the brief with renumbered citations, a **Sources** list with
 - critique (0.9s): approved
 ```
 
+## Real-web run
+
+[`eval/run_eval.py`](eval/run_eval.py) runs ResearchCrew on 5 research questions against the live web (DuckDuckGo search, answer model `openai/gpt-oss-20b` on Groq), then has a separate model (`openai/gpt-oss-120b`) check every cited sentence against the page it cites. Run it with [`eval_colab.ipynb`](eval_colab.ipynb). Results from 26 Nov 2026 ([raw](eval/results.json)):
+
+| Question | Sources cited | Cited sentences | Supported by their source | Critic rewrites | Time |
+|---|---|---|---|---|---|
+| HNSW vs IVF vector indexes | 2 | 8 | 100% | 0 | 5 s |
+| Approaches to evaluating LLM agents | 3 | 10 | 70% | 0 | 47 s |
+| How mixture-of-experts models work | 6 | 9 | 78% | 1 | 167 s |
+| What RAG is and how it fails | 0 | 0 | n/a | 0 | 3 s |
+| How LoRA reduces fine-tuning cost | 0 | 0 | n/a | 0 | 2 s |
+
+- **81.5% of cited sentences (22 of 27) were supported** by the page they cite; no citation pointed to a source that doesn't exist.
+- **2 of 5 questions got no search results.** Keyless DuckDuckGo search often returns nothing to cloud IPs such as Colab's. ResearchCrew answered "no reliable sources found" instead of falling back to the model's memory, which is the intended behaviour, but it means search is the weakest link.
+- The critic sent one report back for more research and a rewrite (the mixture-of-experts question), which is also why it took longest.
+
+Next: retry search with backoff and support an API-backed search (`TavilySearch` is already in `tools.py`), then rerun on a larger question set.
+
 ## Tests
 
 ```bash
