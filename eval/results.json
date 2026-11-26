@@ -1,0 +1,91 @@
+{
+  "config": {
+    "model": "groq/openai/gpt-oss-20b",
+    "judge": "openai/gpt-oss-120b",
+    "search": "DuckDuckGo",
+    "max_sub_questions": 3
+  },
+  "summary": {
+    "questions": 5,
+    "supported_claims": 0.815,
+    "cited_sentences": 27,
+    "invalid_citations_removed": 0,
+    "avg_sources_cited": 2.2,
+    "runs_with_critic_revision": 1,
+    "avg_seconds": 44.8,
+    "avg_llm_calls": 5.6,
+    "avg_tokens": 7694
+  },
+  "per_question": [
+    {
+      "question": "What is retrieval-augmented generation and what are its main failure modes?",
+      "sub_questions": 1,
+      "research_steps": 1,
+      "sources_cited": 0,
+      "critic_revisions": 0,
+      "cited_sentences": 0,
+      "supported_claims": null,
+      "invalid_citations": 0,
+      "critic_ok_at_end": true,
+      "seconds": 2.7,
+      "llm_calls": 1,
+      "tokens": 233
+    },
+    {
+      "question": "How does LoRA fine-tuning reduce the cost of adapting large language models?",
+      "sub_questions": 3,
+      "research_steps": 3,
+      "sources_cited": 0,
+      "critic_revisions": 0,
+      "cited_sentences": 0,
+      "supported_claims": null,
+      "invalid_citations": 0,
+      "critic_ok_at_end": true,
+      "seconds": 2.3,
+      "llm_calls": 1,
+      "tokens": 252
+    },
+    {
+      "question": "What is the difference between HNSW and IVF indexes in vector databases?",
+      "sub_questions": 1,
+      "research_steps": 1,
+      "sources_cited": 2,
+      "critic_revisions": 0,
+      "cited_sentences": 8,
+      "supported_claims": 1.0,
+      "invalid_citations": 0,
+      "critic_ok_at_end": true,
+      "seconds": 5.1,
+      "llm_calls": 6,
+      "tokens": 6922
+    },
+    {
+      "question": "What are the main approaches to evaluating LLM agents?",
+      "sub_questions": 1,
+      "research_steps": 1,
+      "sources_cited": 3,
+      "critic_revisions": 0,
+      "cited_sentences": 10,
+      "supported_claims": 0.7,
+      "invalid_citations": 0,
+      "critic_ok_at_end": true,
+      "seconds": 46.6,
+      "llm_calls": 6,
+      "tokens": 8046
+    },
+    {
+      "question": "How do mixture-of-experts language models work?",
+      "sub_questions": 1,
+      "research_steps": 3,
+      "sources_cited": 6,
+      "critic_revisions": 1,
+      "cited_sentences": 9,
+      "supported_claims": 0.778,
+      "invalid_citations": 0,
+      "critic_ok_at_end": true,
+      "seconds": 167.1,
+      "llm_calls": 14,
+      "tokens": 23017
+    }
+  ]
+}
