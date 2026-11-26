@@ -96,7 +96,7 @@ Next: retry search with backoff and support an API-backed search (`TavilySearch`
 pytest
 ```
 
-17 offline tests use a scripted LLM, a fake search engine and a fake web, so they run in under a second with no API keys. They cover:
+19 offline tests use a scripted LLM, a fake search engine and a fake web, so they run in under a second with no API keys. They cover:
 
 - one parallel researcher per sub-question
 - URL de-duplication within and across researchers
@@ -108,6 +108,7 @@ pytest
 - the revision loop staying bounded
 - citation renumbering and removal of invented citations
 - HTML cleaning
+- the eval's pairing of each cited sentence with its sources
 
 CI runs ruff and the tests on Python 3.10–3.12.
 
