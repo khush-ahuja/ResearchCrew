@@ -23,7 +23,7 @@ class Fetch(Protocol):
 
 
 class DuckDuckGoSearch:
-    """Free web search, no API key (uses the `ddgs` package)."""
+    """Web search with no API key (uses the `ddgs` package)."""
 
     def __call__(self, query: str, k: int = 5) -> list[SearchResult]:
         from ddgs import DDGS
